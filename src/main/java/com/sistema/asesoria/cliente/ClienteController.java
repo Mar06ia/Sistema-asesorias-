@@ -7,9 +7,12 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import java.lang.reflect.UndeclaredThrowableException;
+import com.sistema.asesoria.asesoria.Asesoria;
 
 @Controller
 public class ClienteController {
@@ -33,12 +36,33 @@ public class ClienteController {
     return "cliente/cliente_formulario";
   }
 
-  // guardar Cliente
+  // Duplicidad Alerta
   @PostMapping("/clientes/guardar")
-  public String guardarCliente(@Valid Cliente cliente) {
-    agro.save(cliente);
+  public String guardarCliente(@Valid Cliente cliente, BindingResult res, Model m) {
+      Cliente clienteEncontrado = agro.findCorreo(cliente.getCorreo_Cliente());
+      if (res.hasErrors()) {
+        return "cliente/cliente_formulario";
+      }
+      if(clienteEncontrado != null){
+        if (clienteEncontrado.getCorreo_Cliente().equals(cliente.getCorreo_Cliente())) {
+          // System.out.println("\n Duplicado \n"+"--------------------------------------------");
+          // m.addAttribute("duplicado", true);
+          return "redirect:/clientes/nuevo?duplicado";
+        }
+      }else{
+        agro.save(cliente);
+      } 
     return "redirect:/clientes";
   }
+
+  // guardar Cliente
+  // @PostMapping("/clientes/guardar")
+  // public String guardarCliente(@Valid Cliente cliente) {
+  //   System.out.println("\n"+cliente.getCorreo_Cliente()+"\n"+"--------------------------------------------");
+
+  //   agro.save(cliente);
+  //   return "redirect:/clientes";
+  // }
 
   // editar Cliente
   @GetMapping("/clientes/editar/{id_Cliente}")

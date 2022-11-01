@@ -1,0 +1,81 @@
+*{
+    background-color: #fff;
+}
+
+.main-content {
+    padding-left: 280px;
+    padding-right: 30px;
+    padding-top: 130px;
+    width: 100%;
+    position: relative;
+}
+
+.section {
+    position: relative;
+    z-index: 1;
+}
+
+.section>*:first-child {
+    margin-top: -7px;
+}
+.row {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/*app.min.css*/
+.col-12 {
+    -ms-flex: 0 0 100%;
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 0.46875rem 2.1875rem rgb(90 97 105 / 10%), 0 0.9375rem 1.40625rem rgb(90 97 105 / 10%), 0 0.25rem 0.53125rem rgb(90 97 105 / 12%), 0 0.125rem 0.1875rem rgb(90 97 105 / 10%);
+}
+
+.card .card-header {
+    background-color: #fff;
+    line-height: 30px;
+    -ms-grid-row-align: center;
+    align-self: center;
+    width: 100%;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+}
+
+.card .card-body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: transparent;
+    padding: 20px 25px;
+}    
+.row {
+    display: inline-block;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.dataTables_wrapper {
+    padding: 0 !important;
+    font-size: 13px !important;
+}
+div.dataTables_wrapper div.dataTables_length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+}
+.label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}

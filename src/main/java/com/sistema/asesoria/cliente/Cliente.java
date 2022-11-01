@@ -27,7 +27,7 @@ public class Cliente {
     @Column(length = 50)
     private String detalle_Direccion;
 
-    @Column(length = 50)
+    @Column(length = 50, unique = true)
     private String correo_Cliente;
 
     @Column(length = 50)

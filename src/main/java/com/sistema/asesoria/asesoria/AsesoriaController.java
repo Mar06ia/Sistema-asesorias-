@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -22,7 +22,6 @@ public class AsesoriaController {
     @Autowired//traemos los repositorios
     private AsesoriaRepository asesoriarepository;
       //public String es porque me retorna a un archivo html
-
 
       //Lista
       @GetMapping("/asesoria")//redireccionar
@@ -37,6 +36,7 @@ public class AsesoriaController {
         model.addAttribute("asesoria", new Asesoria());
         return "asesoria/asesoria_formulario";
       }
+
       //guardar usuario
       @PostMapping("/asesoria/guardar")
       public String guardarAsesoria(@Valid Asesoria asesoria){

@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<title></title>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="">Asesoria</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="text-center">
+			<a th:href="@{/usuarios}">Lista de usuario</a>
+			<br><br>
+			<a th:href="@{/usuarios/nuevo}">Agregar usuario</a>
+			<br><br>
+			<a th:href="@{/solicituds}">Lista de Solicitud</a>
+			<br><br>
+			<a th:href="@{/solicituds/nuevo}">Agregar Solicitud</a>
+			<br><br>
+			<a th:href="@{/agendamiento}">Lista de agendamiento</a>
+			<br><br>
+			<a th:href="@{/agendamiento/nuevo}">Agregar agendamiento</a>
+			<br><br>
+			<a th:href="@{/asesoria}">Lista de asesoria</a>
+			<br><br>
+			<a th:href="@{/asesoria/nuevo}">Agregar asesoria</a>
+			<br><br>
+			<a th:href="@{/clientes}">Listar cliente</a>
+			<br><br>
+			<a th:href="@{/clientes/nuevo}">Agregar cliente</a>
+			</div>
+
+
+
+</body>
+</html>

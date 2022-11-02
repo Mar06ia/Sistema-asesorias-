@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>Formulario de Registro</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		<script src="https://kit.fontawesome.com/392a27d13c.js" crossorigin="anonymous"></script>
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="assets/css/style-login.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('assets/img/Login/a.jpg');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="assets/img/Login/j.jpg" alt="">
+				</div>
+				<form action="">
+					<img src="assets/img/Login/logo.png" class="logo" alt="">
+					<h3>Registrarse</h3>
+					<div class="form-group">
+						<input type="text" placeholder="Nombre" class="fom"  required >
+						<input type="text" placeholder="Apellido" class="fom" required>
+					</div>
+					<div class="form-wrapper">
+						<select name="" id="" class="form-control" required>
+							<option value="" disabled selected>Tipo Documento</option>
+							<option value="male">C.C</option>
+							<option value="femal">C.E</option>
+							<option value="femal">OTRO</option>
+						</select>
+						<i class="fa-sharp fa-solid fa-caret-down" style="font-size: 17px"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="number" placeholder="Documento" class="form-control" required >
+						<i class="fa-sharp fa-solid fa-user"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="number" placeholder="Telefono" class="form-control" required>
+						<i class="fa-sharp fa-solid fa-phone"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="email" placeholder="Correo" class="form-control" required>
+						<i class="fa-sharp fa-solid fa-envelope"></i>
+					</div>
+					<div class="form-wrapper">
+						<select name="" id="" class="form-control" required>
+							<option value="" disabled selected>Tipo Usuario</option>
+							<option value="male">Administrador</option>
+							<option value="femal">Ingeniero</option>
+						</select>
+						<i class="fa-sharp fa-solid fa-caret-down" style="font-size: 17px"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="Contraseña" class="form-control" required>
+						<i class="fa-sharp fa-solid fa-lock"></i>
+					</div>
+					
+					<button class="botoncito">Registrar
+						<i class="fa-sharp fa-solid fa-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

@@ -1,5 +1,9 @@
-*{
-    background-color: #fff;
+body {
+    background-color: #f6f6f6;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Nunito", "Segoe UI", arial;
+    color: #6c757d;
 }
 .section{
     display: block;
@@ -88,6 +92,7 @@ label {
     color: #ffffff;
     border-radius: 3px;
     box-shadow: 0 2px 6px #acb5f6;
+    padding-bottom: 5px;
 }
 
 .navbar-bg {
@@ -98,6 +103,7 @@ label {
     width: 100%;
     height: 70px;
     z-index: -1;
+    background-color: #acb5f6;
 }
 .mr-auto{
     margin-right: auto !important;
@@ -119,5 +125,104 @@ label {
     top: 0;
 }
 
+.navbar-bg {
+    background-color: #fff;
+    box-shadow: 15px 9px 25px 0 rgb(0 0 0 / 10%);
+}
+
+.main-sidebar, .navbar, .main-content, .main-footer {
+    transition: all 0.5s;
+}
+
+@media (max-width: 1024px){
+.navbar {
+    left: 5px;
+    right: 0;
+}}
+
+.navbar {
+    align-items: center;
+}
+
+.sticky {
+    position: fixed !important;
+    top: 0;
+}
+
+.mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
+.navbar .nav-link {
+    color: purple;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    height: 100%;
+}
+
+@media (max-width: 575.98px){
+.navbar .nav-link {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+.navbar .nav-link {
+    color: #f2f2f2;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    height: 100%;
+}
+.navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+}
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+}}
+
+.form-inline{
+   background-color: orange;
+}
 
 
+
+.feather {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.navbar-toggler-icon{
+    background-color: gray;
+}
+
+.main-content {
+    transition: all 0.5s;
+}
+
+@media (max-width: 1024px){
+.navbar {
+    left: 5px;
+    right: 0;
+}}
+
+.navbar {
+    align-items: center;
+}
+.sticky {
+    position: fixed !important;
+    top: 0;
+    background-color: goldenrod;
+}
+
+.logo-header{
+    height: 30px;
+}
+
+.logo-name {
+    vertical-align: middle;
+    font-size: 20px
+}

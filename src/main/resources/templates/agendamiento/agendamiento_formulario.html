@@ -7,8 +7,19 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
 		integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 	<title>Agendamiento</title>
+		<!--Scripts JS-->
+	  <link  rel="stylesheet" th:href="@{/css/form.css}"/>
+	  <!-- General JS Scripts -->
+	  <script src="@{/js/app.min.js}"></script>
+	  <!-- JS Libraies -->
+	  <!-- Page Specific JS File -->
+	  <!-- Template JS File -->
+	  <script src="@{/js/script.js}"></script>
+	  <!-- Custom JS File -->
+	  <script src="@{/js/custom.js}"></script>
 </head>
 <body>
+	<!--
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="">Asesoria</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -20,62 +31,86 @@
 				<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
 			</ul>
 		</div>
-	</nav>
-	<div class="container text-center">
-		<div>
-			<!--si esto es igual a Usuario si lo voy agregar me saldra este titulo-->
-			<h1 th:if="${agendamiento.idAgendamiento == null}">Registro de Agendamiento</h1>
-			<!--lo contrario de registrar -->
-			<h1 th:unless="${agendamiento.idAgendamiento == null}">Editar Agendamiento</h1>
+	</nav>-->
+	<div class="main-content" style="min-height: 874px;">
+		<div class="main-wrapper main-wrapper-1">
+			<div class="navbar-bg">
+			<nav class="navbar navbar-expand-lg main-navbar sticky">
+
+				<img th:src="@{/img/logo.png}" class="logo-header"><br>
+				<span class="logo-name">AgroFuturo</span>
+
+				<div class="form-inline mr-auto">
+			    <ul class="navbar-nav mr-3">
+					<li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg collapse-btn"> <i data-feather="align-justify"></i></a></li>
+				    <form class="form-inline mr-auto">
+				    <div class="search-element">
+					<input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
+					<button class="btn" type="submit">
+						<i class="fas fa-search"></i>
+				</ul>
+					</button>
+				  </div>
+				</form>
+			  </li>
+			</ul>
+		  </div>  
 		</div>
 
-		<form th:action="@{/agendamiento/guardar}" th:object="${agendamiento}" method="post"
-			style="max-width: 600px; margin: 0 auto;">
+		<section class="section">
+			<div class="row">
+				<div class="card col-12 col-md-6 col-lg-6">	
+					<div class="container">
+						<div class="card-header">
+							<!--si esto es igual a Usuario si lo voy agregar me saldra este titulo-->
+							<h4 th:if="${agendamiento.idAgendamiento == null}">Registro de Agendamiento</h4>
+							<!--lo contrario de registrar -->
+							<h4 th:unless="${agendamiento.idAgendamiento == null}">Editar Agendamiento</h4>
+						</div>
 
-			<input type="hidden" th:field="*{idAgendamiento}" th:value="${agendamiento.idAgendamiento}" />
+						<div class="card-body">
+						<form th:action="@{/agendamiento/guardar}" th:object="${agendamiento}" method="post"
+								style="max-width: 600px; margin: 0 auto;">
 
+								<input type="hidden" th:field="*{idAgendamiento}" th:value="${agendamiento.idAgendamiento}" />
 
-			<div class="form-group row">
-				<label class="col-form-label col-sm-4">Fecha a Agendar:
-				</label>
-				<div class="col-sm-8">
-					<input type="date" min="2022-09-20" th:field="*{fechaAgendamiento}" class="form-control" required />
+								<div class="form-group">
+									<label class="col-form-label col-sm-4">Fecha a Agendar:</label>
+										<input type="date" min="2022-09-20" th:field="*{fechaAgendamiento}" class="form-control" required />
+								</div>
+
+								<div class="form-group">
+									<label class="col-form-label col-sm-4">Fecha Revisión</label><br>
+										<input type="date" min="2022-09-20" th:field="*{fechaRevisionAgendamiento}" class="form-control"required />
+								</div>
+
+								<!--<div class="form-group row">
+									<label class="col-form-label col-sm-4">Descripción: </label>
+									<div class="col-sm-8">
+										<select th:field="*{asesoria}" class="form-control" required>
+											<th:block th:each="solicitud : ${listaSoulicituds}">
+												recorre toda la lista de la usuario que le coloque en el controlador 
+												<option th:text="${solicitud.descripcion}" th:value="${solicitud.idSolicitud}"></option>-->
+												<!-- el texto va ser el nombre pero con el id me guarda el objeto es lo mas importante -->
+											</th:block>
+										</select>
+						
+								</div>
+						</div>
+
+								<div class="text-center p">
+									<button class="boton" type="submit">
+										<a style="--clr:#1e9bff"
+											onclick="return confirm('Deseas guardar estos datos!');"><span>Guardar</span></a>
+									</button>
+								</div>
+						</form>
+					</div>
 				</div>
+			    </div>
 			</div>
-
-
-			<div class="form-group row">
-				<label class="col-form-label col-sm-4">Fecha Revisión
-				</label>
-				<div class="col-sm-8">
-					<input type="date" min="2022-09-20" th:field="*{fechaRevisionAgendamiento}" class="form-control"
-						required />
-				</div>
 			</div>
-
-			<!--<div class="form-group row">
-				<label class="col-form-label col-sm-4">Descripción: </label>
-				<div class="col-sm-8">
-					<select th:field="*{asesoria}" class="form-control" required>
-						<th:block th:each="solicitud : ${listaSoulicituds}">
-							recorre toda la lista de la usuario que le coloque en el controlador 
-							<option th:text="${solicitud.descripcion}" th:value="${solicitud.idSolicitud}"></option>-->
-							<!-- el texto va ser el nombre pero con el id me guarda el objeto es lo mas importante -->
-						</th:block>
-					</select>
-				</div>
-			</div>
-
-			<div class="text-center p">
-				<button class="boton" type="submit">
-					<a style="--clr:#1e9bff"
-						onclick="return confirm('Deseas guardar estos datos!');"><span>Guardar</span></a>
-				</button>
-			</div>
+		</section>
 	</div>
-	</form>
-	</div>
-
 </body>
-
 </html>

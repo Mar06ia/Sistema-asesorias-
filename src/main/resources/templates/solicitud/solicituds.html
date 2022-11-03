@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+    <title></title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="">Asesoria</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+
+        <table id="example" class="table table-bordered" style="width:100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Descripcion</th>
+                    <th>Tipo de Solicitud</th>
+                    <th>Cliente Correo</th>
+                    <th>Usuario Nombre</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="solicitud : ${listaSolicituds}">
+                    <td th:text="${solicitud.idSolicitud}"></td>
+                    <td th:text="${solicitud.fechaCreacion}"></td>
+                    <td th:text="${solicitud.descripcion}"></td>
+                    <td th:text="${solicitud.tipoSolicitud}"></td>
+                    <td th:text="${solicitud.cliente.correo_Cliente}"></td>
+                    <td th:text="${solicitud.usuario.nombreUsuario}"></td>
+                    <td>
+                        <span th:if="${solicitud.estado==true}">Activo</span>
+                        <span th:if="${solicitud.estado==false}">Inactivo</span>
+                    </td>
+                    <td><a th:href="@{'/solicituds/editar'+'/'+ ${solicitud.idSolicitud}}"
+                            class="btn btn-info">Editar</a> &nbsp;
+                        <a th:href="@{'/solicituds/eliminar'+ '/' + ${solicitud.idSolicitud}}"
+                            class="btn btn-danger">Rechazar</a>
+                        <a th:if="${solicitud.estado==true}"
+                            th:href="@{'/solicitud/estado'+ '/' + ${solicitud.idSolicitud}}"
+                            class="btn btn-danger">Inactivar</a>
+                        <a th:if="${solicitud.estado==false}"
+                            th:href="@{'/solicitud/estado'+ '/' + ${solicitud.idSolicitud}}"
+                            class="btn btn-info">Activar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+</body>
+
+</html>

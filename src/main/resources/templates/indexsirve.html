@@ -1,72 +1,36 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>AgroFuturo</title>
-  <!--FontAwesome Icons-->
-  <script src="https://kit.fontawesome.com/6131ecdde6.js" crossorigin=anonymous></script>
-  <!-- Favicons -->
-  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link th:href="@{../assets/vendor/aos/aos.css}" rel="stylesheet">
-  <link th:href="@{../assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-  <link th:href="@{../assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
-  <link th:href="@{../assets/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
-  <link th:href="@{../assets/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
-  <link th:href="@{../assets/vendor/remixicon/remixicon.css}" rel="stylesheet">
-  <link th:href="@{../assets/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link th:href="@{../assets/css/style-index.css}" rel="stylesheet">
-  <!--slider germanitttt-->
-  <link th:href="@{..assets/css/mislider.css}" rel="stylesheet" type="text/css" />
-  <link th:href="@{..assets/css/mislider-custom.css}" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" th:src="@{../assets/js/jquery-2.1.4.min.js}"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}">
+    <title>Document</title>
 </head>
-
 <body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container">
-      <div class="header-container d-flex align-items-center justify-content-between">
-        <div class="logo">
-          <img th:src="@{../assets/img/index/logo.png}" alt="">
-          <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container">
+          <div class="header-container d-flex align-items-center justify-content-between">
+            <div class="logo">
+              <img th:src="@{../assets/img/index/logo.png}" alt="">
+            </div>
+    
+            <nav id="navbar" class="navbar">
+              <ul>
+                <li><a class="nav-link scrollto" href="#">Inicio</a></li>
+                <li><a class="nav-link scrollto " href="#">Acerca de</a></li>
+                <li><a class="nav-link scrollto" href="#">Asesorías</a></li>
+                <li><a class="nav-link scrollto" href="#">Productos</a></li>
+                <li><a class="nav-link scrollto" href="#">Contactenos</a></li>
+                <li><a class="getstarted scrollto" href="#">Iniciar Sesión</a></li>
+              </ul>
+              <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+    
+          </div><!-- End Header Container -->
         </div>
-
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link scrollto" href="index.html">Inicio</a></li>
-            <li><a class="nav-link scrollto " href="#acercade">Acerca de</a></li>
-            <li><a class="nav-link scrollto" href="#about">Asesorías</a></li>
-            <li><a class="nav-link scrollto" href="#product">Productos</a></li>
-            <!--<li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>-->
-            <li><a class="nav-link scrollto" href="#services">Contactenos</a></li>
-            <li><a class="getstarted scrollto" href="./login.html">Iniciar Sesión</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-
-      </div><!-- End Header Container -->
-    </div>
-  </header><!-- End Header -->
-
-
-  <!-- ======= Hero Section ======= -->
+      </header><!-- End Header -->
+      <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
       <h1>Aportamos soluciones al Campo</h1>
@@ -430,5 +394,4 @@
   <!-- //mislider -->
 
 </body>
-
 </html>
